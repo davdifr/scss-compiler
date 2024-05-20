@@ -25,7 +25,7 @@ exports.compileScss = (req, res) => {
         }
         const mainScssContent = fs.readFileSync(mainScssFile, 'utf8');
 
-        const result = sass.compile({
+        const result = sass.renderSync({
             data: mainScssContent,
             includePaths: [tempDir],
         });
