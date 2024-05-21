@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors'); // Importa il middleware CORS
 const uploadMiddleware = require('./middlewares/uploadMiddleware');
 const compileController = require('./controllers/compileController');
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
